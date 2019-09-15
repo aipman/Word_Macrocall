@@ -1,3 +1,6 @@
+Sub 显示段落高度()
+     StatusBar = "段落高度：" & Selection.ParagraphFormat.LineSpacing & "磅，字间距：" & Selection.Font.Spacing & "(正为增宽，负为紧缩)。"
+End Sub
 Sub 增加段落间距()
 '
 ' 增加段落间距
@@ -7,7 +10,7 @@ Sub 增加段落间距()
         .LineSpacingRule = wdLineSpaceExactly
         .LineSpacing = Selection.ParagraphFormat.LineSpacing + 1
     End With
-    显示段落高度()
+    StatusBar = "段落高度：" & Selection.ParagraphFormat.LineSpacing & "磅，字间距：" & Selection.Font.Spacing & "(正为增宽，负为紧缩)。"
 End Sub
 Sub 减少段落间距()
 '
@@ -18,11 +21,9 @@ Sub 减少段落间距()
         .LineSpacingRule = wdLineSpaceExactly
         .LineSpacing = Selection.ParagraphFormat.LineSpacing - 1
     End With
-    显示段落高度()
+    StatusBar = "段落高度：" & Selection.ParagraphFormat.LineSpacing & "磅，字间距：" & Selection.Font.Spacing & "(正为增宽，负为紧缩)。"
 End Sub
-Sub 显示段落高度()
-     StatusBar = "段落高度：" & Selection.ParagraphFormat.LineSpacing & "磅，字间距：" & Selection.Font.Spacing & "(正为增宽，负为紧缩)。"
-End Sub
+
 
 Sub 增加字间距()
 '
@@ -32,7 +33,7 @@ Sub 增加字间距()
     With Selection.Font
         .Spacing = Selection.Font.Spacing + 0.1
     End With
-    显示段落高度()
+    StatusBar = "段落高度：" & Selection.ParagraphFormat.LineSpacing & "磅，字间距：" & Selection.Font.Spacing & "(正为增宽，负为紧缩)。"
 End Sub
 Sub 减少字间距()
 '
@@ -42,5 +43,6 @@ Sub 减少字间距()
     With Selection.Font
         .Spacing = Selection.Font.Spacing - 0.1
     End With
-    显示段落高度()
+    StatusBar = "段落高度：" & Selection.ParagraphFormat.LineSpacing & "磅，字间距：" & Selection.Font.Spacing & "(正为增宽，负为紧缩)。"
 End Sub
+
